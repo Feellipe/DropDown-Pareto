@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {NotificationDropDowns} from './components/notification/NotificationDropdown';
-import Header from './components/Header';
+// import Header from './components/Header';
 // const company = CompaniesData.companyList;
 class App extends Component {
 	constructor(props){
@@ -12,13 +12,17 @@ class App extends Component {
 			selectedCompany: '',
 		};
 	}
+	
+	handleOpen = () => {
+		this.setState({openNotification: true})
+	};
 
 	render() {
 		return (
 			<div className="App">
-				<Header>
-					<NotificationDropDowns />
-				</Header>
+				
+				<NotificationDropDowns onClick={this.handleOpen}/>
+				
 			</div>
 		);
 	}

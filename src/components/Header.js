@@ -3,11 +3,8 @@ import styled from 'styled-components';
 
 
 const Header = () => {
-    return (
-    <HeaderWrapper>
-
-    </HeaderWrapper>)
-}
+	return <HeaderWrapper />;
+};
 
 const HeaderWrapper = styled.div`
     background-color: lightgrey;
