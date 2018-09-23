@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import NotificationData from './mockNotifications';
 import {NotificationCardsSmall} from './NotificationCards';
 
 
@@ -13,7 +14,12 @@ export const NotificationDropDowns = ({ handleOpen }) => (
 			backgroundColor="#8573f7" />
 		<NotificationBox className="Notification-Box">
 			<MarkAsRead> {'Mark all as Read'} </MarkAsRead>
-			<NotificationCardsSmall />
+			<CardsWrapper>
+				
+				{NotificationData.map((notifcation) =>
+					(<NotificationCardsSmall key={notifcation.id} notification={notifcation}/>))}
+
+			</CardsWrapper>
 			<SeeAllWrapper>	
 				<HorizontalDivider />
 				<SeeAll> {'See all'} </SeeAll>
@@ -23,6 +29,12 @@ export const NotificationDropDowns = ({ handleOpen }) => (
 );
 
 // const NotificationBell = bellWithNotifications(notificationIcon, NotificationApi)
+
+const CardsWrapper = styled.div`
+	overflow: auto;
+	height: 230px;
+
+`;
 
 const SeeAllWrapper = styled.div`
 	position: absolute
@@ -51,9 +63,9 @@ const NotificationBox = styled.div`
 	border-radius: 6px;
 	box-shadow: 3px 3px 5px 6px #ccc;
 	margin-left: 50px;
-    min-height: 300px;
+    min-height: 310px;
 	position: relative;
-	width: 240px;
+	width: 250px;
 `;
 
 

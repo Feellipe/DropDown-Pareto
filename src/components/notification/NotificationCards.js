@@ -10,16 +10,16 @@ export const NotificationCardsSmall = () => (
 		<UnreadBar />
 		<CloseButton />
 		<UserImage />
-		<NotificationMessage> {NotificationList.notification1.content} </NotificationMessage>
+		<NotificationMessage> { NotificationList.notification1.user + NotificationList.notification1.content} </NotificationMessage>
 	</Card>
 );
 
 const Card = styled.div`
     position: relative;
     background-color: #fff;
-    border: 1px lightgrey solid;
+    border: 0.5px lightgrey solid;
     border-radius: 7px
-    margin: 0 10px 0 10px;  
+    margin: 10px 15px 0 ;  
     width: 210px;
     height: 65px;
     
@@ -34,9 +34,14 @@ const CloseButton = styled.div`
     right: 5px;
     top:5px;
 `;
-const NotificationMessage = styled.span`
+const NotificationMessage = styled.div`
+    position: absolute;
     color: #261f41;
-    font-size: 13px;
+    font-size: 12px;
+    width:150px;
+    top: 55%
+    left: 60%;
+    transform: translate(-50%, -50%);
 `;
 
 const UnreadBar = styled.div`
@@ -48,10 +53,10 @@ const UnreadBar = styled.div`
 
 const UserImage = styled.div`
     position: absolute;
-    top: 25%;
+    top: 21%;
     left 5px;
     background-color: black;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 `;
