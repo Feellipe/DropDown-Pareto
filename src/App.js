@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {NotificationDropDowns} from './components/notification/NotificationDropdown';
+import NotificationDropDowns from './components/notification/NotificationDropdown';
 // import Header from './components/Header';
 // const company = CompaniesData.companyList;
 class App extends Component {

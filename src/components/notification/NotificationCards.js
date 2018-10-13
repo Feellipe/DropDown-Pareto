@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import NotificationData from './mockNotifications';
 
-const NotificationList = NotificationData.notificationList;
 
-export const NotificationCardsSmall = () => (
+
+export const NotificationCardsSmall = ({notification}) => (
 	<Card>
 		<UnreadBar />
 		<CloseButton />
 		<UserImage />
-		<NotificationMessage> { NotificationList.notification1.user + NotificationList.notification1.content} </NotificationMessage>
+		<NotificationMessage> { notification.content} </NotificationMessage>
 	</Card>
 );
 
